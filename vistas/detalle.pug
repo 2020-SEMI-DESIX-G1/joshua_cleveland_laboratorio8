@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+html(lang="es")
+
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        style
+            include ../public/bootstrap.min.css
+        title Lista de Estudiantes
+
+    body
+
+        div(class="container")
+            div(class="row")
+                div(class="col-md-6 order-md-6 mb-2")
+                    h3 Edita de Estudiantes
+                    form(method="post" action="/estudiantes/"+estudiantes._id)
+                        div(class="row")
+                            div(class="col-md-6 mb-3")
+                                label(for='firstName') Nombre
+                                input#firstName.form-control(type='text' name='nombre' placeholder='' value=estudiantes.nombre required='')
+                            div(class="col-md-6 mb-3")
+                                label(for='firstName') edad
+                                input#firstName.form-control(type='number' name='edad' placeholder='' value=estudiantes.edad required='')
+
+                            button.btn.btn-primary.btn-lg.btn-block(type='submit') Guardar
